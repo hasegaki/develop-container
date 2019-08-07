@@ -1,0 +1,15 @@
+version: "3.2"
+
+services:
+  webap:
+    build: webap
+    ports:
+      - "8080:80"
+    volumes:
+      - ./application:/var/www/application
+      - ~/.npmrc:/home/appadm/.npmrc
+
+
+networks:
+  default:
+    driver: bridge
